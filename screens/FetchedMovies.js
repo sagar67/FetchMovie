@@ -34,7 +34,7 @@ function FetchedMovies() {
     return <Text>Loading...</Text>;
   }
 
-  function renderMoviesList({item}) {
+  function renderMoviesList({ item }) {
     const movies = {
       id: item.id,
       title: item.title,
@@ -50,9 +50,7 @@ function FetchedMovies() {
       <FlatList
         data={fetchMovies}
         renderItem={renderMoviesList}
-        keyExtractor={(item, index) => {
-          item.id;
-        }}
+        keyExtractor={(item, index) => item.id}
       />
     </View>
   );
@@ -61,10 +59,10 @@ function FetchedMovies() {
 export default FetchedMovies;
 
 const styles = StyleSheet.create({
-    userId:{
-        marginTop:15,
-        fontWeight:'bold',
-        textAlign:'center',
-        margin:10,
-    }
-})
+  userId: {
+    marginTop: 15,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 10,
+  },
+});
