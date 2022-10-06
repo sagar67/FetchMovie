@@ -27,7 +27,6 @@ function FetchedMovies() {
         });
         setFetchMovies(fetchedMovies);
         setIsLoading(false);
-        // console.log("FetchedMovies useEffect fetchMovies", fetchedMovies);
       });
   }, []);
 
@@ -35,53 +34,17 @@ function FetchedMovies() {
     return <Text>Loading...</Text>;
   }
 
-  //   console.log("*** FetchedMovies fetchMovies_State", fetchMovies);
-
-  //   useEffect(() => {
-  //     async function getMovies() {
-  //       const response = await axios.get("https://reactnative.dev/movies.json");
-
-  //       const movies = response.data.movies.map((movie)=>{
-  //         return {
-  //             id: movie.id,
-  //             title:movie.title,
-  //             releaseYear:movie.releaseYear,
-  //         }
-  //       }
-  //       )
-  //          setFetchMovies(movies);
-  //     }
-  //     getMovies();
-  //   });
-
-  //   useEffect(() => {
-  //     async function getMovies() {
-  //       const movies = await MoviesFetched();
-  //       setFetchMovies(movies);
-  //     }
-  //     getMovies();
-  //   }, []);
-
-  function renderMoviesList(itemData) {
-    const item = itemData.item;
+  function renderMoviesList({item}) {
     const movies = {
       id: item.id,
       title: item.title,
       releaseYear: item.releaseYear,
     };
-  // function renderMoviesList({item}) {
-  //   const movies = {
-  //     id: item.id,
-  //     title: item.title,
-  //     releaseYear: item.releaseYear,
-  //   };
 
-    // console.log('*** FetchedMovies renderMoviesList movies',movies)
     return <MoviesList movies={movies} />;
   }
 
   return (
-    //   <MoviesList movies={fetchMovies} />
     <View>
       <Text style={styles.userId}>{user}</Text>
       <FlatList
