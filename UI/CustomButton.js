@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     padding: 10,
-    fontSize: 16,
+    fontSize: 18,
     color: "white",
   },
   pressed: {

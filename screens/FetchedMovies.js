@@ -10,14 +10,12 @@ function FetchedMovies() {
   const user = useSelector((state) => state.user.username);
 
   useEffect(() => {
-    console.log("*** FetchedMovies useEffect Fetching_Movies");
     setIsLoading(true);
     fetch("https://reactnative.dev/movies.json")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         const fetchedMovies = data.movies.map((movieData) => {
           return {
             id: movieData.id,
@@ -50,7 +48,7 @@ function FetchedMovies() {
       <FlatList
         data={fetchMovies}
         renderItem={renderMoviesList}
-        keyExtractor={(item, index) => item.id}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
