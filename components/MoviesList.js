@@ -3,24 +3,6 @@ import React from "react";
 import { StyleSheet, View, Text, FlatList, Pressable } from "react-native";
 
 function MoviesList({ movies }) {
-//   console.log("*** MoviesList title", movies);
-
-//   function renderMoviesItems(itemData){
-//      const item = itemData.item;
-     
-//      const moviesItems = {
-//         id: item.id,
-//         title: item.title,
-//         releaseYear : item.releaseYear,
-//      }
-//      return
-//   }
-
-//   return <FlatList 
-//   data={movies}
-//   renderItem={renderMoviesItems}
-//   keyExtractor={(item)=>{item.id}}
-//   />
 
 const navigation = useNavigation();
 
