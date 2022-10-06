@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         borderRadius:3,
         margin:10,
         padding:8,
-        backgroundColor:'#F27FE6'
+        backgroundColor:'#d9b99b'
      },
      movieCotainer:{
         flexDirection:'row',
