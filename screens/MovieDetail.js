@@ -40,13 +40,12 @@ const DUMMY_DATA = [
 function MovieDetail({ route }) {
   const movieItemId = route.params.movieId;
 
-  // console.log(movieItemId);
   const movie = DUMMY_DATA.find((movie) => {
     return movie.id === movieItemId;
   });
 
   return (
-    <View>
+    <View style={styles.rootContainer}>
       <Image style={styles.imageContainer} source={{ uri: movie.poster }} />
       <Text style={styles.description}>{movie.description}</Text>
     </View>
@@ -56,12 +55,21 @@ function MovieDetail({ route }) {
 export default MovieDetail;
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+    padding: 8,
+  },
   imageContainer: {
     width: "100%",
     height: 200,
+    resizeMode: "contain",
+    margin: 8,
   },
-  description:{
-     fontSize:16,
-     marginLeft:10,
-    }
+  description: {
+    fontSize: 16,
+    textAlign: "justify",
+    backgroundColor:'#d9b99b',
+    borderRadius:5,    
+    padding:7,
+  },
 });
