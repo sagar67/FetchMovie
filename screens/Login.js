@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Alert } from "react-native";
 import { useDispatch } from "react-redux";
 import { usernameActions } from "../store/username";
+import CustomButton from "../UI/CustomButton";
 
 function Login({ navigation }) {
   const [username, setUsername] = useState("");
@@ -11,12 +12,10 @@ function Login({ navigation }) {
 
   function usernameHandler(enteredInput) {
     setUsername(enteredInput);
-    // console.log('*** Login usernameHandler enteredUsername', enteredUsername)
   }
 
   function passwordHandler(enteredInput) {
     setPassword(enteredInput);
-    // console.log('*** Login passwordHandler enteredPassword', enteredInput)
   }
 
   const submitHandler = () => {
@@ -43,7 +42,6 @@ function Login({ navigation }) {
   };
   return (
     <View style={styles.rootContainer}>
-      <View style={styles.inputContainer}>
         <Text style={styles.textLabel}>Username</Text>
         <TextInput
           style={styles.textInput}
@@ -64,8 +62,7 @@ function Login({ navigation }) {
           secureTextEntry={true}
           autoCorrect={false}
         />
-      </View>
-      <Button style={styles.button} title="Login" onPress={submitHandler} />
+      <CustomButton onPress={submitHandler} >Login</CustomButton>
     </View>
   );
 }
@@ -76,14 +73,8 @@ const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     justifyContent: "center",
-    // alignItems:'center',
     marginBottom: 50,
     marginHorizontal: 20,
-  },
-  inputContainer: {
-    // borderWidth:2,
-    // borderRadius:4,
-    // backgroundColor:'beige',
   },
   textLabel: {
     textAlign: "center",
@@ -95,7 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: "grey",
     marginBottom: 8,
     borderRadius: 6,
-    // fontSize: 18,
     padding: 10,
     color: "white",
   },
